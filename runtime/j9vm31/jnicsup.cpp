@@ -500,10 +500,7 @@ NewObject(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = NewObjectV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return NewObjectV_64(env, clazz, methodID, parms);
 }
 
 jobject JNICALL
@@ -514,10 +511,7 @@ NewObjectV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
 	long long value = *((int *)(((int *)(args))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = NewObjectV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return NewObjectV_64(env, clazz, methodID, parms);
 }
 
 jobject JNICALL

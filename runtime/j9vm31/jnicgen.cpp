@@ -41,10 +41,7 @@ CallObjectMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = CallObjectMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallObjectMethodV_64(env, obj, methodID, parms);
 }
 
 jobject JNICALL
@@ -54,10 +51,7 @@ CallObjectMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = CallObjectMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallObjectMethodV_64(env, obj, methodID, parms);
 }
 
 jobject JNICALL
@@ -91,10 +85,7 @@ CallBooleanMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jboolean returnValue = CallBooleanMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallBooleanMethodV_64(env, obj, methodID, parms);
 }
 
 jboolean JNICALL
@@ -104,10 +95,7 @@ CallBooleanMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jboolean returnValue = CallBooleanMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallBooleanMethodV_64(env, obj, methodID, parms);
 }
 
 jboolean JNICALL
@@ -141,10 +129,7 @@ CallByteMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jbyte returnValue = CallByteMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallByteMethodV_64(env, obj, methodID, parms);
 }
 
 jbyte JNICALL
@@ -154,10 +139,7 @@ CallByteMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jbyte returnValue = CallByteMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallByteMethodV_64(env, obj, methodID, parms);
 }
 
 jbyte JNICALL
@@ -191,10 +173,7 @@ CallCharMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jchar returnValue = CallCharMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallCharMethodV_64(env, obj, methodID, parms);
 }
 
 jchar JNICALL
@@ -204,10 +183,7 @@ CallCharMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jchar returnValue = CallCharMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallCharMethodV_64(env, obj, methodID, parms);
 }
 
 jchar JNICALL
@@ -241,10 +217,7 @@ CallShortMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jshort returnValue = CallShortMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallShortMethodV_64(env, obj, methodID, parms);
 }
 
 jshort JNICALL
@@ -254,10 +227,7 @@ CallShortMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jshort returnValue = CallShortMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallShortMethodV_64(env, obj, methodID, parms);
 }
 
 jshort JNICALL
@@ -291,10 +261,7 @@ CallIntMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jint returnValue = CallIntMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallIntMethodV_64(env, obj, methodID, parms);
 }
 
 jint JNICALL
@@ -304,10 +271,7 @@ CallIntMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jint returnValue = CallIntMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallIntMethodV_64(env, obj, methodID, parms);
 }
 
 jint JNICALL
@@ -341,10 +305,7 @@ CallLongMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jlong returnValue = CallLongMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallLongMethodV_64(env, obj, methodID, parms);
 }
 
 jlong JNICALL
@@ -354,10 +315,7 @@ CallLongMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jlong returnValue = CallLongMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallLongMethodV_64(env, obj, methodID, parms);
 }
 
 jlong JNICALL
@@ -391,10 +349,7 @@ CallFloatMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jfloat returnValue = CallFloatMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallFloatMethodV_64(env, obj, methodID, parms);
 }
 
 jfloat JNICALL
@@ -404,10 +359,7 @@ CallFloatMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jfloat returnValue = CallFloatMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallFloatMethodV_64(env, obj, methodID, parms);
 }
 
 jfloat JNICALL
@@ -441,10 +393,7 @@ CallDoubleMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jdouble returnValue = CallDoubleMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallDoubleMethodV_64(env, obj, methodID, parms);
 }
 
 jdouble JNICALL
@@ -454,10 +403,7 @@ CallDoubleMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jdouble returnValue = CallDoubleMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallDoubleMethodV_64(env, obj, methodID, parms);
 }
 
 jdouble JNICALL
@@ -491,8 +437,6 @@ CallVoidMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
 	CallVoidMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
 	return;
 }
 
@@ -504,8 +448,6 @@ CallVoidMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list arg)
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
 	CallVoidMethodV_64(env, obj, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
 	return;
 }
 
@@ -540,10 +482,7 @@ CallNonvirtualObjectMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID met
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = CallNonvirtualObjectMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualObjectMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jobject JNICALL
@@ -553,10 +492,7 @@ CallNonvirtualObjectMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID me
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = CallNonvirtualObjectMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualObjectMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jobject JNICALL
@@ -590,10 +526,7 @@ CallNonvirtualBooleanMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID me
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jboolean returnValue = CallNonvirtualBooleanMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualBooleanMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jboolean JNICALL
@@ -603,10 +536,7 @@ CallNonvirtualBooleanMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID m
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jboolean returnValue = CallNonvirtualBooleanMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualBooleanMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jboolean JNICALL
@@ -640,10 +570,7 @@ CallNonvirtualByteMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID metho
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jbyte returnValue = CallNonvirtualByteMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualByteMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jbyte JNICALL
@@ -653,10 +580,7 @@ CallNonvirtualByteMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID meth
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jbyte returnValue = CallNonvirtualByteMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualByteMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jbyte JNICALL
@@ -690,10 +614,7 @@ CallNonvirtualCharMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID metho
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jchar returnValue = CallNonvirtualCharMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualCharMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jchar JNICALL
@@ -703,10 +624,7 @@ CallNonvirtualCharMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID meth
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jchar returnValue = CallNonvirtualCharMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualCharMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jchar JNICALL
@@ -740,10 +658,7 @@ CallNonvirtualShortMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID meth
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jshort returnValue = CallNonvirtualShortMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualShortMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jshort JNICALL
@@ -753,10 +668,7 @@ CallNonvirtualShortMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID met
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jshort returnValue = CallNonvirtualShortMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualShortMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jshort JNICALL
@@ -790,10 +702,7 @@ CallNonvirtualIntMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID method
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jint returnValue = CallNonvirtualIntMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualIntMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jint JNICALL
@@ -803,10 +712,7 @@ CallNonvirtualIntMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID metho
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jint returnValue = CallNonvirtualIntMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualIntMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jint JNICALL
@@ -840,10 +746,7 @@ CallNonvirtualLongMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID metho
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jlong returnValue = CallNonvirtualLongMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualLongMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jlong JNICALL
@@ -853,10 +756,7 @@ CallNonvirtualLongMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID meth
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jlong returnValue = CallNonvirtualLongMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualLongMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jlong JNICALL
@@ -890,10 +790,7 @@ CallNonvirtualFloatMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID meth
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jfloat returnValue = CallNonvirtualFloatMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualFloatMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jfloat JNICALL
@@ -903,10 +800,7 @@ CallNonvirtualFloatMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID met
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jfloat returnValue = CallNonvirtualFloatMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualFloatMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jfloat JNICALL
@@ -940,10 +834,7 @@ CallNonvirtualDoubleMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID met
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jdouble returnValue = CallNonvirtualDoubleMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualDoubleMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jdouble JNICALL
@@ -953,10 +844,7 @@ CallNonvirtualDoubleMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID me
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jdouble returnValue = CallNonvirtualDoubleMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallNonvirtualDoubleMethodV_64(env, obj, clazz, methodID, parms);
 }
 
 jdouble JNICALL
@@ -990,9 +878,6 @@ CallNonvirtualVoidMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID metho
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
 	CallNonvirtualVoidMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return;
 }
 
 void JNICALL
@@ -1003,9 +888,6 @@ CallNonvirtualVoidMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID meth
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
 	CallNonvirtualVoidMethodV_64(env, obj, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return;
 }
 
 void JNICALL
@@ -1039,10 +921,7 @@ CallStaticObjectMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = CallStaticObjectMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticObjectMethodV_64(env, clazz, methodID, parms);
 }
 
 jobject JNICALL
@@ -1052,10 +931,7 @@ CallStaticObjectMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list a
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jobject returnValue = CallStaticObjectMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticObjectMethodV_64(env, clazz, methodID, parms);
 }
 
 jobject JNICALL
@@ -1089,10 +965,7 @@ CallStaticBooleanMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jboolean returnValue = CallStaticBooleanMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticBooleanMethodV_64(env, clazz, methodID, parms);
 }
 
 jboolean JNICALL
@@ -1102,10 +975,7 @@ CallStaticBooleanMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list 
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jboolean returnValue = CallStaticBooleanMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticBooleanMethodV_64(env, clazz, methodID, parms);
 }
 
 jboolean JNICALL
@@ -1139,10 +1009,7 @@ CallStaticByteMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jbyte returnValue = CallStaticByteMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticByteMethodV_64(env, clazz, methodID, parms);
 }
 
 jbyte JNICALL
@@ -1152,10 +1019,7 @@ CallStaticByteMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list arg
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jbyte returnValue = CallStaticByteMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticByteMethodV_64(env, clazz, methodID, parms);
 }
 
 jbyte JNICALL
@@ -1189,10 +1053,7 @@ CallStaticCharMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jchar returnValue = CallStaticCharMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticCharMethodV_64(env, clazz, methodID, parms);
 }
 
 jchar JNICALL
@@ -1202,10 +1063,7 @@ CallStaticCharMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list arg
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jchar returnValue = CallStaticCharMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticCharMethodV_64(env, clazz, methodID, parms);
 }
 
 jchar JNICALL
@@ -1239,10 +1097,7 @@ CallStaticShortMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jshort returnValue = CallStaticShortMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticShortMethodV_64(env, clazz, methodID, parms);
 }
 
 jshort JNICALL
@@ -1252,10 +1107,7 @@ CallStaticShortMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list ar
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jshort returnValue = CallStaticShortMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticShortMethodV_64(env, clazz, methodID, parms);
 }
 
 jshort JNICALL
@@ -1289,10 +1141,7 @@ CallStaticIntMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jint returnValue = CallStaticIntMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticIntMethodV_64(env, clazz, methodID, parms);
 }
 
 jint JNICALL
@@ -1302,10 +1151,7 @@ CallStaticIntMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list arg)
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jint returnValue = CallStaticIntMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticIntMethodV_64(env, clazz, methodID, parms);
 }
 
 jint JNICALL
@@ -1339,10 +1185,7 @@ CallStaticLongMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jlong returnValue = CallStaticLongMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticLongMethodV_64(env, clazz, methodID, parms);
 }
 
 jlong JNICALL
@@ -1352,10 +1195,7 @@ CallStaticLongMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list arg
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jlong returnValue = CallStaticLongMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticLongMethodV_64(env, clazz, methodID, parms);
 }
 
 jlong JNICALL
@@ -1389,10 +1229,7 @@ CallStaticFloatMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jfloat returnValue = CallStaticFloatMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticFloatMethodV_64(env, clazz, methodID, parms);
 }
 
 jfloat JNICALL
@@ -1402,10 +1239,7 @@ CallStaticFloatMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list ar
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jfloat returnValue = CallStaticFloatMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticFloatMethodV_64(env, clazz, methodID, parms);
 }
 
 jfloat JNICALL
@@ -1439,10 +1273,7 @@ CallStaticDoubleMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	long long value = *((int *)((char*)&(methodID) + sizeof(jmethodID)));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jdouble returnValue = CallStaticDoubleMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticDoubleMethodV_64(env, clazz, methodID, parms);
 }
 
 jdouble JNICALL
@@ -1452,10 +1283,7 @@ CallStaticDoubleMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list a
 	long long value = *((int *)(((int *)(arg))[1]));
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
-	jdouble returnValue = CallStaticDoubleMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return returnValue;
+	return CallStaticDoubleMethodV_64(env, clazz, methodID, parms);
 }
 
 jdouble JNICALL
@@ -1489,9 +1317,6 @@ CallStaticVoidMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
 	CallStaticVoidMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return;
 }
 
 void JNICALL
@@ -1502,9 +1327,6 @@ CallStaticVoidMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list arg
 	(void)( (parms)[0] = 0, (parms)[1] =  (char *)&(methodID), (parms)[2] = 0, (parms)[3] = (parms)[1] + sizeof(jmethodID) );
 
 	CallStaticVoidMethodV_64(env, clazz, methodID, parms);
-	(void)( (parms)[0] = 0, (parms)[1] =  (char *)0, (parms)[2] = 0, (parms)[3] = (char *)0);
-
-	return;
 }
 
 void JNICALL
