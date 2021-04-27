@@ -196,7 +196,7 @@ j9_cel4ro64_call_function(
 	J9_CEL4RO64_ArgType returnType, void *returnStorage)
 {
 	uint32_t retcode = J9_CEL4RO64_RETCODE_OK;
-	uint32_t argumentAreaInBytes = (0 == numArgs) ? 0 : (8 * numArgs + sizeof(uint32_t));  /* 8 byte slots + 4 byte length member. */
+	uint32_t argumentAreaInBytes = (0 == numArgs) ? 0 : (sizeof(uint64_t) * numArgs + sizeof(uint32_t));  /* 8 byte slots + 4 byte length member. */
 	J9_CEL4RO64_controlBlock *controlBlock = NULL;
 
 	/* The CEL4RO64 function may not be available if the LE ++APAR is not installed. */
