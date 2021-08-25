@@ -193,7 +193,7 @@ add_custom_ascii_command(OUTPUT "${J9VM_INCLUDE_DIR}/jvmti.h"
 )
 
 # Generate zOS 31/64-bit interoperability compatible jni.h and copy other dependent headers.
-if(J9VM_MODULE_J9VM31)
+if(J9VM_ZOS_3164_INTEROPERABILITY)
 	set(J9VM_INCLUDE31_DIR "${CMAKE_CURRENT_BINARY_DIR}/include31")
 	file(MAKE_DIRECTORY "${J9VM_INCLUDE31_DIR}")
 	file(INSTALL "${CMAKE_CURRENT_SOURCE_DIR}/include/jni_convert.h" "${CMAKE_CURRENT_SOURCE_DIR}/include/jniport.h"
@@ -507,7 +507,7 @@ endif()
 if(J9VM_MODULE_J9VM)
 	add_subdirectory(j9vm)
 endif()
-if(J9VM_MODULE_J9VM31)
+if(J9VM_ZOS_3164_INTEROPERABILITY)
 	add_subdirectory(j9vm31)
 endif()
 # NOTE this is not conditional in the UMA module.xml
