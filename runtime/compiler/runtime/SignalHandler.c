@@ -1004,7 +1004,15 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
          {
          trapType = TRAP_TYPE_INTERNAL_ERROR;
          }
-#endif
+#endif /* defined(TR_TARGET_S390) && defined(LINUX) */
+#if defined(J9ZOS390)
+      else if (sigType == J9PORT_SIG_FLAG_SIGABEND)
+         {
+         /* For Unsafe.get*() APIs may trigger a SIGABEND on z/OS that must be caught and converted to a java/lang/InternalError. */
+         trapType = TRAP_TYPE_INTERNAL_ERROR;
+         }
+#endif /* defined(J9ZOS390) */
+
       /* end of trying to catch traps */
       if (TRAP_TYPE_UNKNOWN == trapType)
          {
