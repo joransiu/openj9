@@ -1000,11 +1000,12 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
             return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH;
             }
          }
+#endif /* defined(TR_TARGET_S390) && defined(LINUX) */
       else if (sigType == J9PORT_SIG_FLAG_SIGBUS)
          {
          trapType = TRAP_TYPE_INTERNAL_ERROR;
          }
-#endif
+
       /* end of trying to catch traps */
       if (TRAP_TYPE_UNKNOWN == trapType)
          {
