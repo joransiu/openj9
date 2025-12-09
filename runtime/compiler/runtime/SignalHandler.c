@@ -964,6 +964,8 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
 
       DXC = *(U_8 *)(((U_8 *)infoValue) + 2);
 
+      printf("Processing signal type: %d (J9PORT_SIG_FLAG_SIGBUS: %d)\n", sigType, J9PORT_SIG_FLAG_SIGBUS);
+
       if (J9PORT_SIG_FLAG_SIGFPE == sigType && DXC == (U_8)0xFF)
          {
          trapType = jit390IdentifyCodeCacheTrapType(vmThread, (U_8 *) controlPCValue, &ILC, sigInfo);
@@ -1003,6 +1005,7 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
 #endif /* defined(TR_TARGET_S390) && defined(LINUX) */
       else if (sigType == J9PORT_SIG_FLAG_SIGBUS)
          {
+         printf("Found SIGBUS. Setting TRAP_TYPE_INTERNAL_ERROR\n");
          trapType = TRAP_TYPE_INTERNAL_ERROR;
          }
 
@@ -1234,6 +1237,7 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
 
       exceptionTable = jitConfig->jitGetExceptionTableFromPC(vmThread, controlPCValue);
 
+	printf("Exception table: %p trapType: %d\n", exceptionTable, trapType);
       if (exceptionTable)
          {
          switch (trapType)
