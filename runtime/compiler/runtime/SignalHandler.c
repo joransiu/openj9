@@ -1002,12 +1002,18 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
             return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH;
             }
          }
-#endif /* defined(TR_TARGET_S390) && defined(LINUX) */
       else if (sigType == J9PORT_SIG_FLAG_SIGBUS)
          {
-         printf("Found SIGBUS. Setting TRAP_TYPE_INTERNAL_ERROR\n");
          trapType = TRAP_TYPE_INTERNAL_ERROR;
          }
+#endif /* defined(TR_TARGET_S390) && defined(LINUX) */
+#if defined(J9ZOS390)
+      else if (sigType == J9PORT_SIG_FLAG_SIGABEND)
+         {
+         printf("Found SIGABEND. Setting TRAP_TYPE_INTERNAL_ERROR\n");
+         trapType = TRAP_TYPE_INTERNAL_ERROR;
+         }
+#endif /* defined(J9ZOS390) */
 
       /* end of trying to catch traps */
       if (TRAP_TYPE_UNKNOWN == trapType)
