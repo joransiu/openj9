@@ -895,12 +895,14 @@ UDATA restoreSystemStackPointerState(J9VMThread* vmThread, U_32 sigType, void* s
 
    /* Retrieve the proper SystemStackPointer value.*/
    infoType = j9sig_info(sigInfo, J9PORT_SIG_CONTROL, J9PORT_SIG_CONTROL_SP, &infoName, &SystemStackPointerInfo);
+   printf("restoreSystemStackPointerState - J9PORT_SIG_CONTROL: %d J9PORT_SIG_VALUE_ADDRESS: %d\n", infoType, J9PORT_SIG_VALUE_ADDRESS);
    if (infoType != J9PORT_SIG_VALUE_ADDRESS)
       return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH;
    realSystemStackPointerValue = *SystemStackPointerInfo;
 
    /* Get the GPR4 register and its original value.*/
    infoType = j9sig_info(sigInfo, J9PORT_SIG_GPR, 4, &infoName, &GPR4Info);
+   printf("restoreSystemStackPointerState - J9PORT_SIG_GPR: %d J9PORT_SIG_VALUE_ADDRESS: %d\n", infoType, J9PORT_SIG_VALUE_ADDRESS);
    if (infoType != J9PORT_SIG_VALUE_ADDRESS)
       return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH;
 
@@ -914,6 +916,7 @@ UDATA restoreSystemStackPointerState(J9VMThread* vmThread, U_32 sigType, void* s
    vmThread->systemStackPointer = 0;
 #endif
 
+   printf("restoreSystemStackPointerState -- J9PORT_SIG_EXCEPTION_CONTINUE_EXECUTION\n");
    return J9PORT_SIG_EXCEPTION_CONTINUE_EXECUTION;
    }
 
