@@ -895,12 +895,14 @@ UDATA restoreSystemStackPointerState(J9VMThread* vmThread, U_32 sigType, void* s
 
    /* Retrieve the proper SystemStackPointer value.*/
    infoType = j9sig_info(sigInfo, J9PORT_SIG_CONTROL, J9PORT_SIG_CONTROL_SP, &infoName, &SystemStackPointerInfo);
+   fprintf(stderr, "  restoreSystemStackPointerState: J9PORT_SIG_CONTROL_SP - infoType: %d (J9PORT_SIG_VALUE_ADDRESS: %d)\n", infoType, J9PORT_SIG_VALUE_ADDRESS);
    if (infoType != J9PORT_SIG_VALUE_ADDRESS)
       return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH;
    realSystemStackPointerValue = *SystemStackPointerInfo;
 
    /* Get the GPR4 register and its original value.*/
    infoType = j9sig_info(sigInfo, J9PORT_SIG_GPR, 4, &infoName, &GPR4Info);
+   fprintf(stderr, "  restoreSystemStackPointerState: GPR4 - infoType: %d (J9PORT_SIG_VALUE_ADDRESS: %d)\n", infoType, J9PORT_SIG_VALUE_ADDRESS);
    if (infoType != J9PORT_SIG_VALUE_ADDRESS)
       return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH;
 
@@ -914,6 +916,7 @@ UDATA restoreSystemStackPointerState(J9VMThread* vmThread, U_32 sigType, void* s
    vmThread->systemStackPointer = 0;
 #endif
 
+   fprintf(stderr, "  restoreSystemStackPointerState: J9PORT_SIG_EXCEPTION_CONTINUE_EXECUTION\n");
    return J9PORT_SIG_EXCEPTION_CONTINUE_EXECUTION;
    }
 
@@ -1009,6 +1012,7 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
       else if (sigType == J9PORT_SIG_FLAG_SIGABEND)
          {
          /* For Unsafe.get*() APIs may trigger a SIGABEND on z/OS that must be caught and converted to a java/lang/InternalError. */
+         fprintf(stderr, "Caught J9PORT_SIG_FLAG_SIGABEND: selected TRAP_TYPE_INTERNAL_ERROR trapType\n");
          trapType = TRAP_TYPE_INTERNAL_ERROR;
          }
 #endif /* defined(J9ZOS390) */
@@ -1241,6 +1245,7 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
 
       exceptionTable = jitConfig->jitGetExceptionTableFromPC(vmThread, controlPCValue);
 
+      fprintf(stderr, "  Exception table: %p\n", exceptionTable);
       if (exceptionTable)
          {
          switch (trapType)
@@ -1254,6 +1259,7 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
             case TRAP_TYPE_INTERNAL_ERROR:
                vmThread->jitException = (J9Object *) (controlPCValue + 1);
                /* add one to *controlPC for symmetry with IA32, handler check subs one */
+	       fprintf(stderr, "Handling TRAP_TYPE_INTERNAL_ERROR trapType\n");
                jit390SetTrapHandler(controlPC, entryPointRegister, (void *) &jitHandleInternalErrorTrap);
                return restoreSystemStackPointerState(vmThread, sigType, sigInfo);
 
@@ -1289,6 +1295,7 @@ UDATA jit390Handler(J9VMThread* vmThread, U_32 sigType, void* sigInfo)
             }
          }
       }
+   fprintf(stderr, "  return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH\n");  
    return J9PORT_SIG_EXCEPTION_CONTINUE_SEARCH;
    }
 
